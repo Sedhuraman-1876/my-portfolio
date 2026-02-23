@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const NAV_LINKS = ["About", "Skills", "Projects", "Contact"];
 
@@ -112,7 +112,7 @@ export default function SedhuramanPortfolio() {
         }
         .hero-inner {
           max-width: 1100px; margin: 0 auto; width: 100%;
-          display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: center;
+          display: flex; flex-direction: column; justify-content: center;
           position: relative; z-index: 1;
         }
         .hero-badge {
@@ -175,22 +175,7 @@ export default function SedhuramanPortfolio() {
         }
         .btn-download:hover { background: rgba(230,90,30,0.1); border-color: #E65A1E; transform: translateY(-2px); }
 
-        .avatar-wrap {
-          width: 240px; height: 280px; position: relative; flex-shrink: 0;
-        }
-        .avatar-wrap::before {
-          content: '';
-          position: absolute; inset: -2px;
-          border-radius: 22px;
-          background: linear-gradient(135deg, #E65A1E 0%, transparent 60%);
-          z-index: 0;
-        }
-        .avatar-wrap img {
-          position: relative; z-index: 1;
-          width: calc(100% - 4px); height: calc(100% - 4px);
-          margin: 2px;
-          border-radius: 20px; object-fit: cover;
-        }
+
 
         /* SECTIONS BASE */
         section { padding: 100px 5vw; width: 100%; max-width: 100vw; }
@@ -325,7 +310,6 @@ export default function SedhuramanPortfolio() {
           section { padding: 80px 4vw; }
           .hero { padding: 110px 4vw 80px; }
           .hero-inner { gap: 40px; }
-          .avatar-wrap { width: 200px; height: 240px; }
           .about-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
           .projects-grid { grid-template-columns: 1fr 1fr; }
           .skills-grid { grid-template-columns: 1fr 1fr; }
@@ -336,8 +320,7 @@ export default function SedhuramanPortfolio() {
         @media (max-width: 768px) {
           section { padding: 60px 5vw; }
           .hero { padding: 90px 5vw 60px; }
-          .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-          .avatar-wrap { width: 140px; height: 165px; order: -1; }
+          .hero-inner { gap: 32px; }
           .hero-name { font-size: 2.2rem; white-space: normal; }
           .hero-title { font-size: 0.85rem; }
           .hero-desc { font-size: 0.92rem; }
@@ -395,9 +378,6 @@ export default function SedhuramanPortfolio() {
               <a href="https://www.linkedin.com/in/sedhuraman-s-08b9a8307" target="_blank" rel="noreferrer" className="btn-outline">LinkedIn</a>
               <a href="/Sedhuraman_Resume.pdf" download="Sedhuraman_Resume.pdf" className="btn-download">⬇ Resume</a>
             </div>
-          </div>
-          <div className="avatar-wrap">
-            <img src="profile.jpeg" alt="Sedhuraman S" />
           </div>
         </div>
       </section>
